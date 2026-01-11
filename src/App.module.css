@@ -1,0 +1,36 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 1fr 16fr;
+    background-color: lightblue;
+}
+
+.header {
+    grid-area: 1 / 1 / 2 / -1;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.header > div:nth-child(2n + 1) {
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.header > div:nth-child(2n + 1).selected {
+    background-color: pink;
+}
+
+.header > div:nth-child(2n + 1):hover {
+    cursor: pointer;
+}
+
+.header > .divider {
+    height: 60%;
+    width: 0.4px;
+    background-color: black;
+}

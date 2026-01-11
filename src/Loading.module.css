@@ -1,0 +1,23 @@
+.loadingScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    height: 32px;
+    width: 32px;
+    animation: spin 4s linear infinite normal;
+    animation-delay: 0s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
