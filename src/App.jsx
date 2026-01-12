@@ -16,6 +16,8 @@ function getHeaderStyle(path) {
 function App() {
   const { path, goToHome, goToShop, goToCart } = usePath();
   const getStyle = getHeaderStyle(path);
+  
+  const props = useStore();
   const {
     loading,
     error,
@@ -24,16 +26,13 @@ function App() {
     updateItemCnt,
     decrementItemCnt,
     incrementItemCnt,
-  } = useStore();
+  } = props;
 
   function getElementToDisplay() {
-    console.log(loading, error);
     if (loading) return <Loading />
     if (error) return <Error />
-    return <Outlet />
+    return <Outlet context={props} />
   }
-
- 
 
   return (
     <div className={styles.main}>

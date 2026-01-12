@@ -16,7 +16,7 @@ export function useStore() {
         return resp.json();
       })
       .then(data => {
-        return new Promise((res, rej) => setTimeout(() => res(data), 500))
+        return new Promise((res, rej) => setTimeout(() => res(data), 100))
       })
       .then(data => {
         if (race) return;
@@ -33,19 +33,40 @@ export function useStore() {
       
   }, []);
 
-  function updateItemCnt(itemId, cnt) {
-      setCart(prevMap => new Map(prevMap).set(itemId, cnt));
+  function updateItemCnt(itemId) {
+    return (cnt) => {
+      if (cnt == 0) {
+        cart.delete(itemId);
+      } else {
+        cart.set(itemId, cnt);
+      }
+      setCart(new Map(cart));
+    }
+      
   }
 
   function decrementItemCnt(itemId) {
+    return () => {
       const cnt = cart.get(itemId);
-      if (!cnt) return;
-      setCart(prevmap => new Map(prevmap).set(itemId, cnt + 1));
+      if (!cnt) {
+        return;
+      } else if (cnt == 1) {
+        cart.delete(itemId);
+      } else {
+        cart.set(itemId, cnt - 1);
+      }
+      setCart(new Map(cart));
+    }
+      
   }
 
   function incrementItemCnt(itemId) {
+    return () => {
       const cnt = cart.get(itemId);
-      setCart(prevMap => new Map(prevMap).set(itemId, (cnt ?? 0) + 1));
+      cart.set(itemId, (cnt ?? 0) + 1);
+      setCart(new Map(cart));
+    }
+      
   }
 
   return {
