@@ -6,7 +6,6 @@ export function useStore() {
   const [error, setError] = useState('');
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState(new Map());
-  const navigate = useNavigate();
 
   useEffect(() => {
     let race = false;
@@ -19,7 +18,6 @@ export function useStore() {
         if (race) return;
         setProducts(data)
         setLoading(false);
-        navigate('/home');
       })
       .catch(e => {
         setError(e)
