@@ -17,6 +17,11 @@ export function Shop() {
   const [filteredProds, setFilteredPros] = useState(products);
 
   function onSearch() {
+    if (search === '') {
+      setFilteredPros(products);
+      return;
+    }
+    
     const regex = new RegExp(search, 'i');
     setFilteredPros(filteredProds.filter(p => {
       return p.title.match(regex);

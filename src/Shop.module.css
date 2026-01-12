@@ -12,15 +12,27 @@
     background-color: lightgrey;
     align-items: center;
     gap: 16px;
+    padding: 8px;
+    border-radius: 16px;
 }
 
+.searchBar > input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border: none;
+}
+
+
 .searchBar > button {
-    height: 32px;
-    width: 32px;
+    border: none;
+    background-color: transparent;
+    height: 24px;
+    width: 24px;
 }
 
 .productGrid {
     display: grid;
     grid-template-columns: repeat(4, 280px);
-    gap: 16px;
+    gap: 24px;
 }

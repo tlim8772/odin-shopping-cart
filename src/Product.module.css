@@ -9,11 +9,21 @@
     border-radius: 16px;
     padding: 16px;
     font-size: 16px;
+
+    transition: transform 0.3s linear;
+}
+
+.productCard:hover {
+    transform: translate(0px, -10px);
 }
 
 .productCard > img {
     height: 40px;
     width: 40px;
+}
+
+.productCard > img:hover {
+    cursor: pointer;
 }
 
 .gutter {
@@ -25,4 +35,49 @@
 
 .gutter > input {
     width: 48px;
+}
+
+.productDialog {
+    background-color: lightcoral;
+    border: none;
+    outline: none;
+    height: 600px;
+    width: 800px;
+}
+
+.dialogPage {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 0.1fr 1fr;
+    gap: 12px;
+}
+
+.dialogProductInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+}
+
+.dialogProductInfo > img {
+    height: 40%;
+    width: 40%;
+}
+
+.dialogProductInfo > div:last-child {
+    font-size: 12px;
+}
+
+.dialogPage > div:nth-child(2) {
+    height: 100%;
+    width: 1px;
+    background-color: black;
+}
+
+.dialogPage > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }

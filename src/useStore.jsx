@@ -16,9 +16,6 @@ export function useStore() {
         return resp.json();
       })
       .then(data => {
-        return new Promise((res, rej) => setTimeout(() => res(data), 100))
-      })
-      .then(data => {
         if (race) return;
         setProducts(data)
         setLoading(false);
