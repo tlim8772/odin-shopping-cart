@@ -2,7 +2,7 @@
     min-height: 100vh;
     min-width: 100%;
     display: grid;
-    grid-template-rows: 1fr 16fr;
+    grid-template-rows: 64px 1fr;
     background-color: lightblue;
 }
 

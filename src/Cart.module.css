@@ -10,11 +10,11 @@
     border-collapse: collapse;
 }
 
-.cartTable > colgroup > col:first-child {
+.cartTable > colgroup > col:nth-child(2) {
     min-width: 720px;
 }
 
-.cartTable > colgroup > col:nth-child(2) {
+.cartTable > colgroup > col:nth-child(3) {
     min-width: 180px;
 }
 
@@ -42,4 +42,10 @@
 
 .gutter > button:hover {
     cursor: pointer;
+}
+
+.productImg {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
 }

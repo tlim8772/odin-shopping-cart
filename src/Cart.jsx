@@ -27,6 +27,11 @@ export function Cart() {
               return (
                 <tr key={itemId}>
                   <td>
+                    <div style={{marginRight: '32px'}}>
+                      <img className={styles.productImg} src={product.image} />
+                    </div>
+                  </td>
+                  <td>
                     {product.title}
                   </td>
                   <td className={styles.tdCenter}>
@@ -44,6 +49,7 @@ export function Cart() {
             })
           }
           <tr>
+            <td>&nbsp;</td>
             <td>Total</td>
             <td>&nbsp;</td>
             <td className={styles.tdCenter}>
@@ -56,6 +62,7 @@ export function Cart() {
             </td>
           </tr>
           <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td className={styles.tdCenter}>
