@@ -44,7 +44,7 @@ export function ProductCard(props) {
         <div>
           {clip(product.title)}
         </div>
-        <div>${product.price}</div>
+        <div>${product.price.toFixed(2)}</div>
         <div className={styles.gutter}>
           <button onClick={decrement}>-</button>
           <input type='number' onChange={update} value={quantity}></input>

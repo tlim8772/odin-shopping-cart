@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 
 export function useStore() {
   const [loading, setLoading] = useState(true);
@@ -16,7 +15,7 @@ export function useStore() {
       })
       .then(data => {
         if (race) return;
-        setProducts(data)
+        setProducts(data);
         setLoading(false);
       })
       .catch(e => {
