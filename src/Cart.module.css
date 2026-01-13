@@ -1,0 +1,45 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+}
+
+.cartTable {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.cartTable > colgroup > col:first-child {
+    min-width: 720px;
+}
+
+.cartTable > colgroup > col:nth-child(2) {
+    min-width: 180px;
+}
+
+.cartTable > tbody td {
+    height: 64px;
+    border-bottom: 0.3px solid black;
+}
+
+.tdCenter {
+    text-align: center;
+}
+
+.gutter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.gutter > button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.gutter > button:hover {
+    cursor: pointer;
+}
