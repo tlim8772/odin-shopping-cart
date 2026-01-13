@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { test, expect, vi } from 'vitest';
 import { useStore } from './useStore';
-import { act } from 'react';
+import { act } from '@testing-library/react';
 
 test('useStore hook renders', () => {
     const { result } = renderHook(() => useStore());
